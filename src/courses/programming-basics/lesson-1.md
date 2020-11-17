@@ -1,7 +1,6 @@
 ---
-title: Introduction
+title: Lesson 2
 description: Introduction to programming
-order: 1
 ---
 
 # Introduction

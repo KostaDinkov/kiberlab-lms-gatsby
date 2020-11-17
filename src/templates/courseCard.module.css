@@ -1,0 +1,38 @@
+.container {
+  color: white;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  margin:20px;
+  display: grid;
+  max-width: 700px;
+  height:200px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  background-color: rgba(0,0,0,0.3);
+  grid-template-areas: 
+    "image title"
+    "image description" ;
+  
+}
+
+.image {
+  grid-area:image;
+  object-fit: contain;
+  border-radius: 10px 0px 0px 10px ;
+  margin-right:5px;
+  
+}
+
+img{
+  border-radius: 10px 0px 0px 10px ;
+}
+
+.title {
+  grid-area: title;
+  margin-bottom:10px;
+}
+
+.description{
+  grid-area: description;
+  overflow: hidden;
+
+}

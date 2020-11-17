@@ -1,6 +1,5 @@
 import React, { Fragment } from 'react'
 import {useStaticQuery, graphql} from 'gatsby'
-import styles from "./header.module.css"
 
 
 export default function Header(props){
