@@ -1,0 +1,41 @@
+header {
+  margin-top:20px;
+  display: grid;
+  grid-template-areas: "logo nav";
+}
+
+.logo{
+  grid-area: logo;
+}
+
+nav {
+  grid-area: nav;
+  display: flex;
+  justify-content: flex-end;
+  
+}
+ul{
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  
+
+}
+
+li{
+  float: left;
+}
+
+li a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 16px;
+  text-decoration: none;
+}
+
+li:hover{
+  background-color: rgba(58, 28, 28, 0.3);
+  box-shadow: var(--box-shadow-small);
+  border-radius: var(--border-radius);
+}

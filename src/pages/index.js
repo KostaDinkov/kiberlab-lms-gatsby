@@ -1,7 +1,9 @@
 import React from "react"
+import {Fragment} from "react"
 import { Link, graphql } from "gatsby"
-import Header from "../components/header"
-import CourseCard from "../templates/courseCard"
+import Header from "../components/header/header"
+import CourseCard from "../templates/courseCard";
+
 
 export default function Home({ data }) {
 
@@ -9,21 +11,24 @@ export default function Home({ data }) {
   console.log(cards)
 
   return (
-    <div>
-      <h1>All Courses</h1>
-      {cards.map((card) =>
-        <CourseCard
-          key = {card.node.parent.relativeDirectory}
-          title={card.node.frontmatter.course}
-          description={card.node.frontmatter.description}
-          imgUrl={card.node.frontmatter.imageUrl}
-        />)
-      }
+    <Fragment>
+      <div class = "page-background"></div>
+      <div className="page-container">
+        <div className="page-content">
+          <Header />
+          <h1>All Courses</h1>
+          {cards.map((card) =>
+            <CourseCard
+              key={card.node.parent.relativeDirectory}
+              title={card.node.frontmatter.course}
+              description={card.node.frontmatter.description}
+              imgUrl={card.node.frontmatter.imageUrl}
+            />)
+          }
+        </div>
 
-
-
-
-    </div>
+      </div>
+    </Fragment>
   )
 }
 
