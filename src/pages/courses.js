@@ -1,5 +1,5 @@
 import React from "react"
-import { Fragment } from "react"
+
 import PageLayout from "../layouts/page-layout"
 
 import CourseCard from "../templates/courseCard";

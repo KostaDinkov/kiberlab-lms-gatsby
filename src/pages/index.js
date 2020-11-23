@@ -1,5 +1,5 @@
 import React from "react"
-import {Fragment} from "react"
+import { Fragment } from "react"
 import { Link, graphql } from "gatsby"
 import Header from "../components/header/header"
 import CourseCard from "../templates/courseCard";
@@ -7,24 +7,52 @@ import CourseCard from "../templates/courseCard";
 
 export default function Home({ data }) {
 
-  const cards = data.allMarkdownRemark.edges;
-  console.log(cards)
-
   return (
     <Fragment>
-      <div class = "page-background"></div>
+      <div class="page-background"></div>
       <div className="page-container">
         <div className="page-content">
           <Header />
-          <h1>All Courses</h1>
-          {cards.map((card) =>
-            <CourseCard
-              key={card.node.parent.relativeDirectory}
-              title={card.node.frontmatter.course}
-              description={card.node.frontmatter.description}
-              imgUrl={card.node.frontmatter.imageUrl}
-            />)
-          }
+
+          <h1>Курсова работа по ОУП</h1>
+          <p>
+            <em>Автор: Костадин Динков</em><br />
+            <em>Студентски №: 46355з </em>
+          </p>
+
+          <h2>Цел на Уеб Проекта</h2>
+          <p>
+            Този уеб проект си поставя за цел две основни задачи.
+            Първата е да покрие изискванията на курсовата работа по Основи на Уеб Програмирането
+            - дисциплина, която се изучава в първи семестър като част от обучението в направление
+            Информатика и Компютърни науки в УниБит. Втората задаче е да бъде разработен прототип на дизайн (UI + UX) за 
+            уеб базирана ситема за управление на знанията (LMS).<br/>
+            Кодът на тази курсова работа може да бъде разгледан в това <a href="">Github репозитори</a> 
+          </p>
+
+          <h2>Използвани Технологии</h2>
+          <p>
+            За реализирането на този проект е използван Gatsby - генератор за статични сайтове използващ React.
+            React е web технология базирана на Javascript и разработена от Facebook, която ни позволява динамично да създаваме
+            потребителски интерфейси като комбинираме Javascript и HTML чрез синтаксис наречен JSX. Компонентите написани с 
+            React могат да постигат високо ниво на абстракция и по-този начин лесно да бъдат преизползвани в различни контексти
+            и с променливи данни. Макар че React e front-end-framework, т.е. изпълнява се на клиентския браузър и генерира 
+            целия HTML в реално време (runtime), Gatsby ни дава възможност да пишем компоненти и уеб страници използвайки
+            синтаксиса на React и след това да генерираме статични ресурси (HTML, CSS, Javascript), които да могат да бъдат
+            хоствани статично и съответно връщани от http сървър като отговори на Http заяавки.
+          </p>
+
+          <h2>LMS</h2>
+          <p style={{columns:2}}>
+            Системата за управление на знанията, за която се разработва потребителският интерфейс демонстриран с този проект
+            има за цел да улесни създаването на онлайн базирани учебни материали и курсове. Потребителите на системата ще 
+            могат да се регистрират, да се записват за курсове, да разглеждат съдържанието на курсовете, да решават тестове,
+            гледат видеа, както и да печелят точки и постижения (badges, achievements) при постигането на определени цели.
+            Системата е в ранен стадий на разработка (към 23.11.2020), а сървърната технологията, която е използвана е ASP.NET core.
+            Дизайнът от този сайт ще бъте пренаписан чрез синтаксисът Razor, който се използва в ASP.NET core и както React, служи
+            за описване на UI, чрез комбиниране на Javascript и C#. Кодът за бекенда може да бъде разгледан в репозиторито <a href="https://github.com/KostaDinkov/kiberlab-lms-aspnetcore">тук</a>
+          </p>
+
         </div>
 
       </div>
@@ -32,27 +60,4 @@ export default function Home({ data }) {
   )
 }
 
-export const data = graphql`
-  query {
-  allMarkdownRemark(filter: {frontmatter: {title: {eq: "Introduction"}}}) {
-    edges {
-      node {
-        frontmatter {
-          title
-          course
-          imageUrl
-          description
-        }
-        fields {
-          slug
-        }
-        parent {
-          ... on File {
-            relativeDirectory
-          }
-        }
-      }
-    }
-  }
-}
-`
+
