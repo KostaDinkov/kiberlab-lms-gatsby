@@ -1,25 +1,25 @@
-import React from "react"
-import { Fragment } from "react"
-import { Link, graphql } from "gatsby"
-import Header from "../components/header/header"
-import CourseCard from "../templates/courseCard";
+import React from "react";
+import { Fragment } from "react";
+import Header from "../components/header/header";
+import CheckList from "../components/checkList/checkList"
+import styles from "./index.module.css";
 
-
-export default function Home({ data }) {
+export default function Home() {
 
   return (
     <Fragment>
       <div class="page-background"></div>
       <div className="page-container">
         <div className="page-content">
-          <Header />
+          <Header/>
 
           <h1>Курсова работа по ОУП</h1>
+          <p className={styles.subtitle}>Прототип на дизайн за система за управление на знанията</p>
           <p>
             <em>Автор: Костадин Динков</em><br />
             <em>Студентски №: 46355з </em>
           </p>
-
+          <hr></hr>
           <h2>Цел на Уеб Проекта</h2>
           <p>
             Този уеб проект си поставя за цел две основни задачи.
@@ -27,7 +27,8 @@ export default function Home({ data }) {
             - дисциплина, която се изучава в първи семестър като част от обучението в направление
             Информатика и Компютърни науки в УниБит. Втората задаче е да бъде разработен прототип на дизайн (UI + UX) за 
             уеб базирана ситема за управление на знанията (LMS).<br/>
-            Кодът на тази курсова работа може да бъде разгледан в това <a href="">Github репозитори</a> 
+            Кодът на тази курсова работа може да бъде разгледан 
+            в това <a href="https://github.com/KostaDinkov/kiberlab-lms-gatsby">Github репозитори</a> 
           </p>
 
           <h2>Използвани Технологии</h2>
@@ -43,15 +44,29 @@ export default function Home({ data }) {
           </p>
 
           <h2>LMS</h2>
-          <p style={{columns:2}}>
+          <p>
             Системата за управление на знанията, за която се разработва потребителският интерфейс демонстриран с този проект
             има за цел да улесни създаването на онлайн базирани учебни материали и курсове. Потребителите на системата ще 
             могат да се регистрират, да се записват за курсове, да разглеждат съдържанието на курсовете, да решават тестове,
-            гледат видеа, както и да печелят точки и постижения (badges, achievements) при постигането на определени цели.
+            гледат видеа, както и да печелят точки и постижения (badges, achievements) при постигането на определени цели. Администраторите
+            на системата ще могат лесно да създават курсове и съдържание, и да получават статискики свързани с прогреса на потребителите.
             Системата е в ранен стадий на разработка (към 23.11.2020), а сървърната технологията, която е използвана е ASP.NET core.
             Дизайнът от този сайт ще бъте пренаписан чрез синтаксисът Razor, който се използва в ASP.NET core и както React, служи
-            за описване на UI, чрез комбиниране на Javascript и C#. Кодът за бекенда може да бъде разгледан в репозиторито <a href="https://github.com/KostaDinkov/kiberlab-lms-aspnetcore">тук</a>
+            за описване на UI, чрез комбиниране на Javascript и C#. Кодът за бекенда може да бъде разгледан в 
+            репозиторито <a href="https://github.com/KostaDinkov/kiberlab-lms-aspnetcore">тук</a>
           </p>
+
+          <h2>Курсова работа</h2>
+          <p>
+            Подробна информация за изпълнението на изискванията по курсовата работа може да бъде намерена в 
+            раздел <a href="/Courses/">/Courses</a>.<br/>
+            На текущата страница са използвани следните html/css функционалности:
+          </p>
+          <CheckList>
+            <span>Заглавия</span>
+            <span>Параграфи</span>
+          </CheckList>
+          Кодът на текущата страница може се намира в папка <code>src/pages/index.js</code>. 
 
         </div>
 

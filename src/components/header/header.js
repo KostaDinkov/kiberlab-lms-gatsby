@@ -1,7 +1,7 @@
 import logo from './logo.png';
 import React from 'react';
 import { Link } from "gatsby";
-import styles from "./header.module.css";
+import styles from "./header.module.scss";
 
 export default function Header() {
 
@@ -11,7 +11,7 @@ export default function Header() {
       <div className="image">
         <img src={logo} alt="Site logo" />
       </div>
-      <nav>
+      <nav className={styles.navigationMainHorizontal}>
         <ul>
           <li>
             <Link to="/">Home</Link>
