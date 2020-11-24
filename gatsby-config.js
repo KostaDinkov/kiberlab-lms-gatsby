@@ -6,19 +6,35 @@
 
 module.exports = {
   /* Your site config here */
-  siteMetadata:{
-    title:`My first Gatsby site`,
-    description:`Description for my first Gatsby site`
+  siteMetadata: {
+    title: `My first Gatsby site`,
+    description: `Description for my first Gatsby site`
   },
   plugins: [
 
     {
       resolve: `gatsby-source-filesystem`,
       options: {
-        name: `courses`,
+        name: `topics`,
         path: `${__dirname}/src/topics`,
       }
     },
-    'gatsby-transformer-remark'
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `media`,
+        path: `${__dirname}/src/media`,
+      }
+    },
+    'gatsby-transformer-remark',
+    `gatsby-plugin-sharp`,
+    `gatsby-transformer-sharp`,
+    {
+      resolve: 'gatsby-plugin-sass',
+      options: {
+        implementation: require("sass")
+      }
+    }
+
   ],
 }

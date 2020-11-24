@@ -21,7 +21,7 @@
 
 
 
-img{
+.cardImg{
   height: var(--container-height);
   grid-area:image;
   object-fit: contain;

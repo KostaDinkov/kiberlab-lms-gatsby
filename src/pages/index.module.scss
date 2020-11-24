@@ -1,0 +1,24 @@
+.subtitle{
+  color: white;
+  font-size: 2.4rem;
+  font-style: italic;
+  
+}
+
+.homePageSection p {
+  text-align: justify;
+}
+
+.heroContainer{
+  position:relative;
+}
+
+.imageOverlay{
+  position: absolute;
+  top:0;
+  left:0;
+  padding: 20px;
+}
+.scrollToTopLink{
+  cursor: pointer;
+}
