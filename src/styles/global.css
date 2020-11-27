@@ -1,16 +1,16 @@
 :root {
-  --main-color:white;
+  --main-color: white;
   --check-color-pass: #04ffe7;
   --check-color-ban: rgb(209, 58, 12);
-  --accent-color-light:#ffde7b;
-  --accent-color:#d4a006;
+  --accent-color-light: #ffde7b;
+  --accent-color: #d4a006;
   --box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
   --box-shadow-small: 0 2px 4px 0 rgba(0, 0, 0, 0.2),
     0 3px 10px 0 rgba(0, 0, 0, 0.19);
   --border-radius: 10px;
-  --border-radius-small:5px;
+  --border-radius-small: 5px;
   --border-radius-left: 10px 0px 0px 10px;
-  --transparent-background:rgba(58, 28, 28, 0.3);
+  --transparent-background: rgba(58, 28, 28, 0.3);
 }
 
 html {
@@ -18,7 +18,6 @@ html {
   font-size: 62.5%;
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   scroll-behavior: smooth;
-  
 }
 
 body {
@@ -29,13 +28,17 @@ body {
 hr {
   height: 1px;
   border: 0;
-  background-image: linear-gradient(to right, rgba(255, 255, 255,1), rgba(255, 255, 255, 0));
+  background-image: linear-gradient(
+    to right,
+    rgba(255, 255, 255, 1),
+    rgba(255, 255, 255, 0)
+  );
 }
 
-code{
+code {
   background-color: var(--transparent-background);
   border-radius: 0.5rem;
-  padding:1px 10px ;
+  padding: 1px 10px;
 }
 
 .page-background {
@@ -60,13 +63,13 @@ code{
   height: 100vh;
   display: grid;
   grid-template-columns: 1fr minmax(780px, 960px) 1fr;
-  grid-template-rows:1fr auto;
+  grid-template-rows: 1fr auto;
 }
 
 .page-content {
   grid-column: 2;
-  color:white;
-  margin:0 20px;
+  color: white;
+  margin: 0 20px;
 }
 a {
   text-decoration: none;
@@ -77,22 +80,35 @@ a:visited {
   color: var(--accent-color-light);
 }
 
-.transparent{
+.transparent {
   opacity: 0.5;
 }
 
-.roundCorners{
-  border-radius:var(--border-radius);
+.roundCorners {
+  border-radius: var(--border-radius);
 }
 
-.shadow{
+.shadow {
   box-shadow: var(--box-shadow);
 }
 
-.pass{
-  color:var(--check-color-pass);
+.pass {
+  color: var(--check-color-pass);
 }
 
-.ban{
-  color:var(--check-color-ban);
+.ban {
+  color: var(--check-color-ban);
 }
+
+.actionButton {
+  border: none;
+  background-color: var(--accent-color);
+  text-decoration: none;
+  padding: 10px;
+  border-radius: var(--border-radius-small);
+  font-weight: bold;
+  box-shadow: var(--box-shadow-small);
+  margin: 10px 0;
+}
+
+

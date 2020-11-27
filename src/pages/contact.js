@@ -25,7 +25,7 @@ export default function Contact(){
       <h2>Направете запитване</h2>
       <form action="" method="get" className={styles.contactForm}>
         <textarea name="message" id="message" rows="10" placeholder="Въведете вашето съобщение тук..."/>
-        <input className={styles.submitButton} type="submit" value="Изпрати"/>
+        <input className="actionButton" type="submit" value="Изпрати"/>
       </form>
       </div>
     </PageLayout>

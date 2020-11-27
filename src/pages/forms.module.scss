@@ -1,0 +1,20 @@
+.textInput {
+  margin:10px 0;
+  display: block;
+  border:none;
+  width: 100%;
+  border:1px solid rgba(0, 0, 0, 0.19);
+  background: var(--transparent-background);
+  border-radius: var(--border-radius-small);
+  padding: 1.5rem;
+}
+.textInput:focus {
+
+  border:1px solid rgba(255, 255, 255, 0.5);
+  outline: 0;
+}
+
+.formWrapper{
+  width:50%;
+  
+}

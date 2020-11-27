@@ -17,16 +17,16 @@ export default function Header() {
             <Link to="/">Home</Link>
           </li>
           <li>
-            <Link to="/Courses">Courses</Link>
+            <Link to="/courses">Courses</Link>
           </li>
           <li>
             <Link to="/contact">Contact</Link>
           </li>
           <li>
-            <Link to="/SignIn">Sign In</Link>
+            <Link to="/signIn">Sign In</Link>
           </li>
           <li>
-            <Link to="/Register">Join</Link>
+            <Link to="/register">Join</Link>
           </li>
         </ul>
       </nav>
