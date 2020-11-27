@@ -6,6 +6,7 @@ import { graphql } from 'gatsby';
 import styles from "./index.module.scss";
 import Img from 'gatsby-image';
 import ScrollToTop from '../components/scrollToTop/scrollToTop';
+import LmsTable from '../components/lmsTable/lmsTable';
 
 export default function Home(props) {
 
@@ -78,6 +79,7 @@ export default function Home(props) {
               за описване на UI, чрез комбиниране на Javascript и C#. Кодът за бекенда може да бъде разгледан в
             репозиторито <a href="https://github.com/KostaDinkov/kiberlab-lms-aspnetcore">тук</a>
             </p>
+            <LmsTable/>
             <ScrollToTop/>
 
             <h2 id="tasks">Курсова работа</h2>
