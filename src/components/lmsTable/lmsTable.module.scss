@@ -1,6 +1,34 @@
-.lmsTable{
+.lmsTable {
   table-layout: fixed;
   width: 100%;
   border-collapse: collapse;
-  
+  margin: 20px 0;
+  caption{
+    padding:10px;
+    font-size: 2.4rem;
+  }
+  thead{
+    background-color: var(--transparent-background);
+  }
+  tbody tr {
+    border-bottom: 1px solid white;
+  }
+
+  td {
+    padding: 10px;
+    text-align: center;
+    :first-child {
+      text-align: left;
+    }
+    img {
+      width: 50%;
+      object-fit: scale-down;
+      border-radius: var(--border-radius-small);
+    }
+    
+  }
 }
+
+
+
+

@@ -7,6 +7,7 @@ import styles from "./index.module.scss";
 import Img from 'gatsby-image';
 import ScrollToTop from '../components/scrollToTop/scrollToTop';
 import LmsTable from '../components/lmsTable/lmsTable';
+import Footer from '../components/footer/footer'
 
 export default function Home(props) {
 
@@ -92,7 +93,13 @@ export default function Home(props) {
               <span>1. Заглавия - <code>&lt;h1&gt; &lt;h2&gt;</code></span>
               <span>2. Параграфи - <code>&lt;p&gt;</code></span>
               <span>3. Хипервръзки - <code>&lt;a&gt;</code></span>
+              <span>4. Таблици - за по-добро организиране на кода, таблицата за LMS системите е изнесена в отделен компонент, който може да 
+                бъде намерен на <code>/src/components/lmsTable/lmsTable.js</code>
+              </span>
               <span>5. Списъци - чрез <code>&lt;ul&gt; &lt;li&gt;</code></span>
+              <span>6. Използване на изображения - в текущата страница са използвани както html тага <code>&lt;img&gt;</code>, 
+              така и <code>&lt;Img&gt;</code> компонент от допълнителния плъгин към Gatsby - "gatsby-image", който дава възможност за автоматично оптимизиране
+              на използваните изображения</span>
               <span>7. Използване на многоколонен текст - чрез css свойството <code>columnCount:2</code> </span>
               <span>8. Дефиниран CSS в началото на документа или външен CSS файл за стилизиране на документа. <code>normalize.css</code> e външен css файл,
             който предоставя модерни стойности на множество css свойства, като по този начин се преодоляват и някой несъответствия между различните
@@ -106,10 +113,11 @@ export default function Home(props) {
           <p>Кодът на текущата страница може се намира в папка <code>src/pages/index.js</code>.</p>
           <ScrollToTop/>
           </section>
-
+          
         </div>
-
+        
       </div>
+      <Footer/>
     </Fragment>
   )
 }

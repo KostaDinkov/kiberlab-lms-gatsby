@@ -1,14 +1,19 @@
 import React from 'react';
-import styles from './lmsTable.module.css';
+import styles from './lmsTable.module.scss';
+import efrontLogo from '../../media/lmsLogo/efront-logo.png'
+import matrixLogo from '../../media/lmsLogo/matrix-logo.png'
+import sabaLogo from '../../media/lmsLogo/saba-logo.png'
+import neoLogo from '../../media/lmsLogo/neo-logo.png'
+import cornerstoneLogo from '../../media/lmsLogo/cornerstone-ondemand-logo.png'
+import talentLmsLogo from '../../media/lmsLogo/talentlms-logo.png'
+import proProfsLogo from '../../media/lmsLogo/proprofs-logo.png'
 
 export default function LmsTable() {
   return (
     <div >
       <table className={styles.lmsTable} >
+        <caption>Сравнителна таблица на някои популярни LMS</caption>
         <thead >
-          <tr>
-            <th colSpan="6">Сравнение на някои популярни LMS</th>
-          </tr>
           <tr>
             <td>Продукт</td>
             <td>TA Rating</td>
@@ -20,60 +25,82 @@ export default function LmsTable() {
         </thead>
         <tbody>
           <tr>
-            <td>eFront</td>
+            <td>
+              <img src={efrontLogo} alt="efront logo" />
+              <br />
+              <a href="https://technologyadvice.com/products/efrontpro-reviews/">eFront</a>
+            </td>
             <td>4.5/5</td>
-            <td><i class="fa fa-check-circle-o" aria-hidden="true"></i></td>
-            <td><i class="fa fa-ban" aria-hidden="true"></i></td>
-            <td><i class="fa fa-check-circle-o" aria-hidden="true"></i></td>
-            <td><i class="fa fa-check-circle-o" aria-hidden="true"></i></td>
+            <td><CheckIcon/></td>
+            <td><CheckIcon/></td>
+            <td><CheckIcon/></td>
+            <td><CheckIcon/></td>
           </tr>
           <tr>
-            <td>Matrix</td>
+            <td>
+              <img src={matrixLogo} alt="matrix logo" /><br />
+              <a href="https://technologyadvice.com/products/matrix-lms-reviews/">Matrix</a>
+            </td>
             <td>4.5/5</td>
-            <td><i class="fa fa-check-circle-o" aria-hidden="true"></i></td>
-            <td><i class="fa fa-ban" aria-hidden="true"></i></td>
-            <td><i class="fa fa-check-circle-o" aria-hidden="true"></i></td>
-            <td><i class="fa fa-check-circle-o" aria-hidden="true"></i></td>
+            <td><CheckIcon/></td>
+            <td><CheckIcon/></td>
+            <td><CheckIcon/></td>
+            <td><CheckIcon/></td>
           </tr>
           <tr>
-            <td>Saba Cloud</td>
+            <td>
+              <img src={sabaLogo} alt="saba logo" /><br />
+              <a href="https://technologyadvice.com/products/saba-software-reviews/">Saba Cloud</a>
+            </td>
             <td>4.5/5</td>
-            <td><i class="fa fa-check-circle-o" aria-hidden="true"></i></td>
-            <td><i class="fa fa-ban" aria-hidden="true"></i></td>
-            <td><i class="fa fa-check-circle-o" aria-hidden="true"></i></td>
-            <td><i class="fa fa-check-circle-o" aria-hidden="true"></i></td>
+            <td><CheckIcon/></td>
+            <td><CheckIcon/></td>
+            <td><BanIcon/></td>
+            <td><CheckIcon/></td>
           </tr>
           <tr>
-            <td>NEO LMS</td>
+            <td>
+              <img src={neoLogo} alt="neo logo" /><br />
+              <a href="https://technologyadvice.com/products/neo-lms-reviews/">NEO LMS</a>
+            </td>
             <td>4.5/5</td>
-            <td><i class="fa fa-check-circle-o" aria-hidden="true"></i></td>
-            <td><i class="fa fa-ban" aria-hidden="true"></i></td>
-            <td><i class="fa fa-check-circle-o" aria-hidden="true"></i></td>
-            <td><i class="fa fa-check-circle-o" aria-hidden="true"></i></td>
+            <td><CheckIcon/></td>
+            <td><CheckIcon/></td>
+            <td><CheckIcon/></td>
+            <td><CheckIcon/></td>
           </tr>
           <tr>
-            <td>Cornerstone</td>
+            <td>
+              <img src={cornerstoneLogo} alt="cornerstone logo" />
+              <a href="https://technologyadvice.com/products/cornerstone-ondemand-reviews/">Cornerstone</a>
+            </td>
             <td>4.5/5</td>
-            <td><i class="fa fa-check-circle-o" aria-hidden="true"></i></td>
-            <td><i class="fa fa-ban" aria-hidden="true"></i></td>
-            <td><i class="fa fa-check-circle-o" aria-hidden="true"></i></td>
-            <td><i class="fa fa-check-circle-o" aria-hidden="true"></i></td>
+            <td><CheckIcon/></td>
+            <td><BanIcon/></td>
+            <td><CheckIcon/></td>
+            <td><BanIcon/></td>
           </tr>
           <tr>
-            <td>telentlms</td>
+            <td>
+              <img src={talentLmsLogo} alt="talentLms logo" /><br />
+              <a href="https://technologyadvice.com/products/talentlms-reviews/">telentlms</a>
+            </td>
             <td>4.5/5</td>
-            <td><i class="fa fa-check-circle-o" aria-hidden="true"></i></td>
-            <td><i class="fa fa-ban" aria-hidden="true"></i></td>
-            <td><i class="fa fa-check-circle-o" aria-hidden="true"></i></td>
-            <td><i class="fa fa-check-circle-o" aria-hidden="true"></i></td>
+            <td><CheckIcon/></td>
+            <td><CheckIcon/></td>
+            <td><CheckIcon/></td>
+            <td><BanIcon/></td>
           </tr>
           <tr>
-            <td>ProProfs</td>
+            <td>
+              <img src={proProfsLogo} alt="proProfsLogo" /><br />
+              <a href="https://technologyadvice.com/products/proprofs-reviews/">ProProfs</a>
+            </td>
             <td>4.5/5</td>
-            <td><i class="fa fa-check-circle-o" aria-hidden="true"></i></td>
-            <td><i class="fa fa-ban" aria-hidden="true"></i></td>
-            <td><i class="fa fa-check-circle-o" aria-hidden="true"></i></td>
-            <td><i class="fa fa-check-circle-o" aria-hidden="true"></i></td>
+            <td><CheckIcon/></td>
+            <td><BanIcon/></td>
+            <td><BanIcon/></td>
+            <td><BanIcon/></td>
           </tr>
         </tbody>
       </table>
@@ -81,3 +108,16 @@ export default function LmsTable() {
 
   )
 }
+
+function CheckIcon() {
+  return (
+    <i class="fa fa-check-circle-o pass fa-2x" aria-hidden="true"/>
+  )
+}
+
+function BanIcon() {
+  return (
+    <i class="fa fa-ban ban fa-2x" aria-hidden="true"/>
+  )
+}
+

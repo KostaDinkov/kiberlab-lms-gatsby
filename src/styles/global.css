@@ -1,11 +1,16 @@
 :root {
+  --main-color:white;
+  --check-color-pass: #04ffe7;
+  --check-color-ban: rgb(209, 58, 12);
   --accent-color-light:#ffde7b;
   --accent-color:#d4a006;
   --box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
   --box-shadow-small: 0 2px 4px 0 rgba(0, 0, 0, 0.2),
     0 3px 10px 0 rgba(0, 0, 0, 0.19);
   --border-radius: 10px;
+  --border-radius-small:5px;
   --border-radius-left: 10px 0px 0px 10px;
+  --transparent-background:rgba(58, 28, 28, 0.3);
 }
 
 html {
@@ -27,7 +32,7 @@ hr {
 }
 
 code{
-  background-color: rgba(58, 28, 28, 0.3);
+  background-color: var(--transparent-background);
   border-radius: 0.5rem;
   padding:1px 10px ;
 }
@@ -78,4 +83,12 @@ a:visited {
 
 .shadow{
   box-shadow: var(--box-shadow);
+}
+
+.pass{
+  color:var(--check-color-pass);
+}
+
+.ban{
+  color:var(--check-color-ban);
 }
