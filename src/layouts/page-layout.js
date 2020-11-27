@@ -1,5 +1,6 @@
 import React, {Fragment} from "react";
 import Header from "../components/header/header"
+import Footer from '../components/footer/footer';
 
 export default function PageLayout({children}){
 
@@ -10,8 +11,9 @@ export default function PageLayout({children}){
         <div className="page-content">
           <Header />
           {children}
+         
         </div>
-
+        <Footer/>
       </div>
       </Fragment>
     )
