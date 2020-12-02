@@ -7,7 +7,7 @@ import CourseCard from "../templates/courseCard";
 
 export default function Courses({ data }) {
 
-  const cards = data.allMarkdownRemark.edges;
+  const cards = data.allMdx.edges;
   console.log(cards)
 
   return (
@@ -21,6 +21,7 @@ export default function Courses({ data }) {
           title={card.node.frontmatter.course}
           description={card.node.frontmatter.description}
           imgUrl={card.node.frontmatter.imageUrl}
+          link = {card.node.fields.slug}
         />)
       }
     </PageLayout>
@@ -30,7 +31,7 @@ export default function Courses({ data }) {
 
 export const data = graphql`
   query {
-  allMarkdownRemark(filter: {frontmatter: {title: {eq: "Introduction"}}}) {
+  allMdx(filter: {frontmatter: {title: {eq: "Introduction"}}}) {
     edges {
       node {
         frontmatter {

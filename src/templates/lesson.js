@@ -1,21 +1,29 @@
 import React, { Fragment } from "react";
-import {graphql} from "gatsby"
+import { graphql, Link } from "gatsby";
+import { MDXProvider } from "@mdx-js/react";
+import { MDXRenderer } from 'gatsby-plugin-mdx'
+import PageLayout from '../layouts/page-layout'
 
 
-export default function Lesson({data}){
-  const lesson = data.markdownRemark;
-  return(
-    <Fragment>
-      <h1>{lesson.frontmatter.title}</h1>
-      <div dangerouslySetInnerHTML = {{__html:lesson.html}}/>
-    </Fragment>
+const shortcodes = { Link, PageLayout }
+
+export default function Lesson({ data: { mdx } }) {
+
+  return (
+    <PageLayout>
+      <h1>{mdx.frontmatter.title}</h1>
+      <MDXProvider components={shortcodes}>
+        <MDXRenderer>{mdx.body}</MDXRenderer>
+      </MDXProvider>
+    </PageLayout>
   )
 }
 
-export const query = graphql`
-  query($slug: String!) {
-  markdownRemark(fields:{slug:{eq: $slug}}){
-    html
+export const pageQuery = graphql`
+  query BlogPostQuery($id: String!) {
+  mdx(id:{eq:$id}){
+    id
+    body
     frontmatter{
       title
     }

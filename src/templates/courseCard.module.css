@@ -19,8 +19,6 @@
   
 }
 
-
-
 .cardImg{
   height: var(--container-height);
   grid-area:image;

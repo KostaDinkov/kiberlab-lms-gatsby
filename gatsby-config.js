@@ -26,7 +26,12 @@ module.exports = {
         path: `${__dirname}/src/media`,
       }
     },
-    'gatsby-transformer-remark',
+    {
+      resolve:'gatsby-plugin-mdx',
+      options:{
+        extensions:['.md','.mdx']
+      }
+    },
     `gatsby-plugin-sharp`,
     `gatsby-transformer-sharp`,
     {
