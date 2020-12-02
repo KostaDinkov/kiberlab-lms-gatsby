@@ -1,6 +1,7 @@
 ---
-title: Lesson 2
-description: Introduction to programming
+title: Какво е програмиране
+description: В този урок ще разберем какво е програмиране и какви са ползите от него.
+order: 10
 ---
 
 # Introduction

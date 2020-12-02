@@ -25,11 +25,11 @@
         text-align: center;
         padding: 16px;
         text-decoration: none;
-        :visited{
+        &:visited{
           color:white;
         }
       }
-      :hover{
+      &:hover{
         background-color: rgba(58, 28, 28, 0.3);
         box-shadow: var(--box-shadow-small);
         border-radius: var(--border-radius);

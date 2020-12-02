@@ -1,0 +1,50 @@
+.coursePageLayout {
+  height: 100vh;
+  display: grid;
+  grid-template-columns:minMax(300px,1fr) 4fr;
+  grid-template-areas: "sideBar content"
+}
+
+.content{
+  grid-area: content;
+  padding:20px;
+  background-color: rgba(248, 239, 219, 0.8);
+  margin:50px;
+  border-radius: var(--border-radius);
+  box-shadow: var(--box-shadow);
+}
+
+.sideBar{
+  color:white;
+  padding: 20px;
+  grid-area: sideBar;
+  background-color:var(--transparent-background);
+  
+}
+
+.lessonList{
+  
+    list-style-type: none;
+    padding-left: 0;
+  li {
+    border: 1px solid transparent;
+    padding:5px;
+    margin: 10px 0;
+    width: 100%;
+    a{
+      color: white;
+    }
+    i{
+      margin-right:1.6rem;
+    }
+    
+
+    &:hover{
+      font-weight: bold;
+      background-color: var(--accent-color);
+      box-shadow: var(--box-shadow-small);
+      border-radius: var(--border-radius);
+      border: 1px solid white
+    }
+  }
+}

@@ -111,13 +111,13 @@ export default function LmsTable() {
 
 function CheckIcon() {
   return (
-    <i class="fa fa-check-circle-o pass fa-2x" aria-hidden="true"/>
+    <i className="fa fa-check-circle-o pass fa-2x" aria-hidden="true"/>
   )
 }
 
 function BanIcon() {
   return (
-    <i class="fa fa-ban ban fa-2x" aria-hidden="true"/>
+    <i className="fa fa-ban ban fa-2x" aria-hidden="true"/>
   )
 }
 

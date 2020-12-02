@@ -1,4 +1,4 @@
-import logo from './logo.png';
+import Logo from '../logo/logo';
 import React from 'react';
 import { Link } from "gatsby";
 import styles from "./header.module.scss";
@@ -9,24 +9,24 @@ export default function Header() {
     <header className={styles.header}>
 
       <div className="image">
-        <img src={logo} alt="Site logo" />
+        <Logo/>
       </div>
       <nav className={styles.navigationMainHorizontal}>
         <ul>
           <li>
-            <Link to="/">Home</Link>
+            <Link to="/">Начало</Link>
           </li>
           <li>
-            <Link to="/courses">Courses</Link>
+            <Link to="/courses">Курсове</Link>
           </li>
           <li>
-            <Link to="/contact">Contact</Link>
+            <Link to="/contact">Контакти</Link>
           </li>
           <li>
-            <Link to="/signIn">Sign In</Link>
+            <Link to="/signIn">Регистрация</Link>
           </li>
           <li>
-            <Link to="/register">Join</Link>
+            <Link to="/register">Вход</Link>
           </li>
         </ul>
       </nav>

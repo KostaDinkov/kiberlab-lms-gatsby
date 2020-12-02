@@ -6,12 +6,18 @@ exports.onCreateNode = ({node, getNode, actions})=>{
 
   if(node.internal.type === `Mdx`){
     const slug = createFilePath({node, getNode, basePath:'topics'})
-    
+    const parent = getNode(node.parent)
     createNodeField({
       node,
       name:`slug`,
       value: slug
     })
+    createNodeField(
+      {node,
+      name:'topic',
+      value:parent.relativeDirectory,
+      }
+    )
   }
   
 }
@@ -26,6 +32,13 @@ exports.createPages = async ({graphql, actions, reporter})=>{
           id
           fields {
             slug
+          }
+          parent{
+            ... on File{
+              id
+              name
+              relativeDirectory
+            }
           }
         }
       }
@@ -43,6 +56,8 @@ exports.createPages = async ({graphql, actions, reporter})=>{
       component: path.resolve(`./src/templates/lesson.js`),
       context:{
         id: node.id,
+        
+
       },
     })
   })

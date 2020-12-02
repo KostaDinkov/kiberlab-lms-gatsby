@@ -10,10 +10,10 @@ export default function SignIn(){
         <h1>Вход за потребители</h1>
         <p>Моля въведете вашитата електронна поща и парола в съответните полета</p>
       <form action="" method="post" className="halfCentered">
-        <label for="email">Електронна поща</label>
+        <label htmlFor="email">Електронна поща</label>
         <input className={styles.textInput} type="email" name="email" id="email" required/>
         
-        <label for="password">Парола</label>
+        <label htmlFor="password">Парола</label>
         <input className={styles.textInput} type="password" name="password" id="password"required/>
         
         <input className= "actionButton" type="submit" value="Влез"/> 

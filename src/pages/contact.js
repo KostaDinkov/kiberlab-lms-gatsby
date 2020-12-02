@@ -7,6 +7,7 @@ export default function Contact(){
       <div className={styles.contactWrapper}>
       <h1>Свържете се с нас</h1>
       <table className={styles.contactsTable}>
+        <tbody>
         <tr>
           <td>Адрес:</td>
           <td>гр. София, п.к. 1784, бул. “Цариградско шосе” № 119</td>
@@ -19,6 +20,7 @@ export default function Contact(){
           <td>Електронна поща:</td>
           <td>unibit@unibit.bg</td>
         </tr>
+        </tbody>
         
       </table>
 

@@ -1,21 +1,30 @@
-import React, { Fragment } from "react";
+import React from "react";
 import { graphql, Link } from "gatsby";
 import { MDXProvider } from "@mdx-js/react";
 import { MDXRenderer } from 'gatsby-plugin-mdx'
 import PageLayout from '../layouts/page-layout'
+import CourseLayout from '../layouts/course-layout';
 
 
 const shortcodes = { Link, PageLayout }
 
-export default function Lesson({ data: { mdx } }) {
+export default function Lesson(props) {
 
+  console.log(props);
+  const mdx= props.data.mdx;
+  
+  
   return (
-    <PageLayout>
+    <CourseLayout 
+      courseDirName = {props.location.state.courseDirName} 
+      courseName ={props.location.state.courseName}
+      lessons = {props.location.state.lessons}
+    >
       <h1>{mdx.frontmatter.title}</h1>
       <MDXProvider components={shortcodes}>
         <MDXRenderer>{mdx.body}</MDXRenderer>
       </MDXProvider>
-    </PageLayout>
+    </CourseLayout>
   )
 }
 
@@ -26,6 +35,9 @@ export const pageQuery = graphql`
     body
     frontmatter{
       title
+    }
+    fields{
+      topic
     }
   }
 }

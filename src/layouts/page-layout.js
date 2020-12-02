@@ -1,21 +1,21 @@
-import React, {Fragment} from "react";
+import React, { Fragment } from "react";
 import Header from "../components/header/header"
 import Footer from '../components/footer/footer';
 
-export default function PageLayout({children}){
+export default function PageLayout({ children }) {
 
-  return(
+  return (
     <Fragment>
-    <div class = "page-background"></div>
+      <div className="page-background"/>
       <div className="page-container">
         <div className="page-content">
           <Header />
           {children}
-         
+
         </div>
-        <Footer/>
+        <Footer />
       </div>
-      </Fragment>
-    )
+    </Fragment>
+  )
 
 }
