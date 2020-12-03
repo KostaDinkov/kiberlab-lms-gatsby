@@ -11,7 +11,7 @@ module.exports = {
     description: `Description for my first Gatsby site`
   },
   plugins: [
-
+    
     {
       resolve: `gatsby-source-filesystem`,
       options: {
@@ -29,9 +29,28 @@ module.exports = {
     {
       resolve:'gatsby-plugin-mdx',
       options:{
-        extensions:['.md','.mdx']
+        extensions:['.md','.mdx'],
+        gatsbyRemarkPlugins:[
+          {
+            resolve:'gatsby-remark-highlight-code',
+            options:{
+              terminal:"carbon",
+              theme:"one-dark"
+            }
+          },
+          // {
+          //   resolve:'gatsby-remark-images',
+          //   options:{
+              
+          //     backgroundColor: "none",
+          //     linkImagesToOriginal: false
+          //   }
+          // },
+          
+        ]
       }
     },
+    //`gatsby-remark-images`,
     `gatsby-plugin-sharp`,
     `gatsby-transformer-sharp`,
     {

@@ -1,6 +1,7 @@
 const { Reporter } = require("gatsby");
 const {createFilePath} = require(`gatsby-source-filesystem`)
 const path = require("path");
+
 exports.onCreateNode = ({node, getNode, actions})=>{
   const {createNodeField} = actions;
 
@@ -25,7 +26,7 @@ exports.onCreateNode = ({node, getNode, actions})=>{
 exports.createPages = async ({graphql, actions, reporter})=>{
   const {createPage} = actions
   const result = await graphql(`
-  query {
+  {
     allMdx {
       edges {
         node {
@@ -33,12 +34,15 @@ exports.createPages = async ({graphql, actions, reporter})=>{
           fields {
             slug
           }
-          parent{
-            ... on File{
+          parent {
+            ... on File {
               id
               name
               relativeDirectory
             }
+          }
+          frontmatter {
+            imageUrl
           }
         }
       }
@@ -56,8 +60,7 @@ exports.createPages = async ({graphql, actions, reporter})=>{
       component: path.resolve(`./src/templates/lesson.js`),
       context:{
         id: node.id,
-        
-
+        relativePath: node.frontmatter.imageUrl
       },
     })
   })

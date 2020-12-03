@@ -6,6 +6,10 @@ import Img from 'gatsby-image';
 import ScrollToTop from '../components/scrollToTop/scrollToTop';
 import LmsTable from '../components/lmsTable/lmsTable';
 import PageLayout from "../layouts/page-layout";
+import { defineCustomElements as deckDeckGoHighlightElement } from '@deckdeckgo/highlight-code/dist/loader';
+
+
+deckDeckGoHighlightElement();
 
 export default function Home(props) {
   return (
@@ -38,7 +42,7 @@ export default function Home(props) {
           Този уеб проект си поставя за цел две основни задачи.
           Първата е да покрие изискванията на курсовата работа по Основи на Уеб Програмирането
           - дисциплина, която се изучава в първи семестър като част от обучението в направление
-          Информатика и Компютърни науки в УниБит. Втората задаче е да бъде разработен прототип на дизайн (UI + UX) за
+          Информатика и Компютърни науки в УниБит. Втората задачa е да бъде разработен прототип на дизайн (UI + UX) за
             уеб базирана ситема за управление на знанията (LMS).<br />
             Кодът на тази курсова работа може да бъде разгледан
             в това <a href="https://github.com/KostaDinkov/kiberlab-lms-gatsby">Github репозитори</a>

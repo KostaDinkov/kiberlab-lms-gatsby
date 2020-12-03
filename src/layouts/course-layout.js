@@ -6,8 +6,7 @@ import LessonIcon from "../components/lessonIcon/lessonIcon";
 
 
 export default function CourseLayout(props) {
-  console.log("Props from course-layout");
-  console.log(props);
+  
   return (
 
     <Fragment>
@@ -25,7 +24,7 @@ export default function CourseLayout(props) {
                   to={lesson.node.fields.slug}
                   state={
                     {
-                      courseDirName: props.courseDirName,
+                      
                       lessons: props.lessons,
                       courseName : props.courseName
                     }

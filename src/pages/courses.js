@@ -26,15 +26,15 @@ export default function Courses({ data }) {
   }
   return (
     <PageLayout>
-      <h1>All Courses</h1>
+      <h1>Всички курсове</h1>
       {courses.map((card) =>
         <CourseCard
-          key={card.node.parent.relativeDirectory}
+          key={card.node.id}
           courseName={card.node.frontmatter.course}
           description={card.node.frontmatter.description}
           imgUrl={card.node.frontmatter.imageUrl}
           link = {card.node.fields.slug}
-          courseDirName = {card.node.parent.relativeDirectory}
+          
           lessons = {getCourseLessons(card.node.parent.relativeDirectory)}
         />)
       }
@@ -55,6 +55,7 @@ export const data = graphql`
           imageUrl
           description
           order
+          type
         }
         fields {
           slug

@@ -11,6 +11,7 @@
   --border-radius-small: 5px;
   --border-radius-left: 10px 0px 0px 10px;
   --transparent-background: rgba(58, 28, 28, 0.3);
+  --deckgo-highlight-code-carbon-box-shadow: none;
 }
 
 html {
@@ -110,5 +111,9 @@ a:visited {
   box-shadow: var(--box-shadow-small);
   margin: 10px 0;
 }
+
+/* deckgo-highlight-code custom styling */
+
+
 
 

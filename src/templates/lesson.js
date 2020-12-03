@@ -2,17 +2,14 @@ import React from "react";
 import { graphql, Link } from "gatsby";
 import { MDXProvider } from "@mdx-js/react";
 import { MDXRenderer } from 'gatsby-plugin-mdx'
-import PageLayout from '../layouts/page-layout'
 import CourseLayout from '../layouts/course-layout';
+import Image from '../components/image/image';
 
-
-const shortcodes = { Link, PageLayout }
+const shortcodes = { Link, Image}
 
 export default function Lesson(props) {
 
-  console.log(props);
   const mdx= props.data.mdx;
-  
   
   return (
     <CourseLayout 
@@ -29,16 +26,18 @@ export default function Lesson(props) {
 }
 
 export const pageQuery = graphql`
-  query BlogPostQuery($id: String!) {
-  mdx(id:{eq:$id}){
+ query TopicQuery( $id:String!) {
+  mdx(id: {eq:$id}) {
     id
     body
-    frontmatter{
+    frontmatter {
       title
+      imageUrl
     }
-    fields{
+    fields {
       topic
     }
   }
+  
 }
 `

@@ -13,14 +13,15 @@ export default function CourseCard(props) {
           to={props.link} 
           state={
             {
-              courseDirName: props.courseDirName,
               courseName:props.courseName,
               lessons: props.lessons
             }}
         >{props.courseName}</Link>
         </div>
       <div className={styles.description}>{props.description}</div>
-      <img className ={styles.cardImg} src={props.imgUrl} alt="random" />
+      <div className = {styles.imageContainer}>
+        <img className ={styles.cardImg} src={props.imgUrl} alt="random"/>
+      </div>
     </div>
   )
 }
