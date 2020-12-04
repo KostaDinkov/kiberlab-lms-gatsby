@@ -17,7 +17,7 @@ export default function CourseLayout(props) {
           <Link to="/courses">&lt; Назад към Всички Курсове</Link>
           <h2>{props.courseName}</h2>
           <ul className={styles.lessonList}>
-            {props.lessons.map(lesson => (
+            {props.lessons?.map(lesson => (
               <li key={lesson.node.id}>
                 <LessonIcon lessonType={lesson.node.frontmatter.type} />
                 <Link

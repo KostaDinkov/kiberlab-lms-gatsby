@@ -9,13 +9,14 @@ const shortcodes = { Link, Image}
 
 export default function Lesson(props) {
 
+  const state = props.location.state || null; 
   const mdx= props.data.mdx;
   
   return (
     <CourseLayout 
-      courseDirName = {props.location.state.courseDirName} 
-      courseName ={props.location.state.courseName}
-      lessons = {props.location.state.lessons}
+      // courseDirName = {props.location.state.courseDirName} 
+      courseName ={state?.courseName ||null}
+      lessons = {state?.lessons || null}
     >
       <h1>{mdx.frontmatter.title}</h1>
       <MDXProvider components={shortcodes}>
