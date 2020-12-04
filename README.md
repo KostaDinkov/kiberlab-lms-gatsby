@@ -15,8 +15,7 @@
 
 Работеща версия на този проект може да бъде видяна на следният адрес:
 
-[Курсов Проект По ОУП](www.netlify.com)
-
+[Курсов Проект По ОУП](https://kiberlab-lms-gatsby.netlify.app/)
 
 
 Кодът за проекта може да бъде разгледан на [този адрес](https://github.com/KostaDinkov/kiberlab-lms-gatsby) в Github.
