@@ -1,6 +1,6 @@
 import React from "react";
 import CheckList from "../components/checkList/checkList";
-import { graphql } from 'gatsby';
+import { graphql,Link } from 'gatsby';
 import styles from "./index.module.scss";
 import Img from 'gatsby-image';
 import ScrollToTop from '../components/scrollToTop/scrollToTop';
@@ -79,8 +79,8 @@ export default function Home(props) {
 
         <h2 id="tasks">Курсова работа</h2>
         <p>
-          Подробна информация за изпълнението на изискванията по курсовата работа може да бъде намерена в
-            раздел <a href="/Courses/">/Courses</a>.<br />
+          Подробна информация за това как е направен този уеб проект може да бъде намерена в
+            курсa <strong>"Как работи този уеб проект"</strong>, който може да бъде отворен от страницата <Link to="/courses">/courses</Link>.<br />
             На текущата страница са използвани следните html/css функционалности:
           </p>
         <CheckList>
