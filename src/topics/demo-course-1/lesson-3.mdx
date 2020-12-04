@@ -1,0 +1,50 @@
+---
+title: Подаване на данни
+description: ""
+order: 30
+type: exercise
+---
+
+## Подаване на данни ползвайки props
+Като за начало, нека опитаме да подадем данни от нашия Board компонент към Square компонента.
+
+Ние силно препоръчваме писането на код собственоръчно докато работите върху уроците, 
+а не копирането на код. Това ще ви помогне да развиете мускулна памет и по-дълбоко разбиране.
+
+В метода renderSquare на Board, променете кода, така че да подадем prop с име value.
+
+```javascript
+class Board extends React.Component {
+  renderSquare(i) {
+    return <Square value={i} />;
+  }
+}
+```
+
+Променете метода render na Square компонента така, че да покажете стойност. Заменете {/* TODO */} с {this.props.value}:
+
+```javascript
+class Square extends React.Component {
+  render() {
+    return (
+      <button className="square">
+        {this.props.value}
+      </button>
+    );
+  }
+}
+```
+
+Преди:
+
+![tactic empty](/img/react/tictac-empty.png)
+
+След: Би трябвало да видите число във всеки един от квадратите.
+
+![tactic numbers](/img/react/tictac-numbers.png)
+
+Честито! Току-що “предадохме prop” от родителския Board към дъщерния Square компонент. 
+Предаването на props е начинът, по който информацията се пренася в React приложенията, 
+от родители към деца компоненти.
+
+

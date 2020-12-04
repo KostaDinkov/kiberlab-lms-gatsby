@@ -1,5 +1,6 @@
 :root {
   --main-color: white;
+  --dark-blue:rgba(2, 83, 115, 1);
   --check-color-pass: #04ffe7;
   --check-color-ban: rgb(209, 58, 12);
   --accent-color-light: #ffde7b;
@@ -113,6 +114,14 @@ a:visited {
 }
 
 /* deckgo-highlight-code custom styling */
+
+blockquote{
+  color:var(--main-color);
+  padding:10px;
+  border-radius: var(--border-radius-small);
+  background-color: var(--dark-blue);
+  font-style: italic;
+}
 
 
 

@@ -1,0 +1,105 @@
+---
+title: Създаване на интерактивен компонент
+description: ""
+order: 40
+type: exercise
+---
+
+Нека да запълним Square компонента с “X” всеки път, когато го натиснем. Първо нека променим button тагът в render метода:
+
+```javascript
+class Square extends React.Component {
+  render() {
+    return (
+      <button className="square" onClick={function() { alert('click'); }}>
+        {this.props.value}
+      </button>
+    );
+  }
+}
+```
+Ако натиснем бутона сега ще видим съобщението “click” от браузера.
+
+>### Забележка 
+>
+>За да спестим писане и за да избегнем объркващото поведение на this, тук и за напред ще използваме arrow функции на местата където трябва да прихванем събития.
+>```
+>class Square extends React.Component {
+> render() {
+>   return (
+>     <button className="square" onClick={() => alert('click')}>
+>       {this.props.value}
+>     </button>
+>   );
+> }
+>}
+>```
+>Забележете как с onClick={() => alert('click')} предаваме функция като стойност на onClick prop-a. 
+>Тя се извиква само след натискане на бутона. Изспускането на () => и използването на onClick={alert('click')} е 
+>често срещана грешка и би показала съобщението “click” всеки път, когато компонентът се рендерира.
+
+Като следваща стъпка искаме компонентът Square да “помни”, че е бил натиснат, и да се запълни с “X” маркер. За да запомнят неща, React компонентите използват състояние (state).
+
+React компонентите могат да имат състояние чрез инициализирането на “this.state” в своите конструктори. this.state трябва да се разглежда като вътрешен за компонента, в който е дефиниран. Нека да запазим текущата стойност на Square в this.state и да я променим, когато щракнем върху компонента.
+
+Първо, ще добавим конструктор към класа, за да инициализира състоянието:
+
+```javascript
+class Square extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      value: null,
+    };
+  }
+
+  render() {
+    return (
+      <button className="square" onClick={() => alert('click')}>
+        {this.props.value}
+      </button>
+    );
+  }
+}
+```
+
+>### Забележка
+>
+>В JavaScript класовете, трябва винаги да извикваме super когато дефинираме конструктор в наследяващия клас. 
+>Ако дефинираме React компонент като клас и добавим конструктор то той трябва винаги да започнем със super(props).
+
+Сега ще променим метода render на Square, за да покажем стойността на текущото състояние при кликване:
+
+* Заменете this.props.value с this.state.value при `<button>` тага.
+* Заменете стойноста на onClick prop-a от () => alert () към () => this.setState({value: 'X'}).
+* Поставете className и onClick на отделни линии за по-добра четимост.
+
+След тези промени тагът `<button>`, който се връща от метода render на Square, изглежда така:
+
+```javascript
+class Square extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      value: null,
+    };
+  }
+
+  render() {
+    return (
+      <button
+        className="square"
+        onClick={() => this.setState({value: 'X'})}
+      >
+        {this.state.value}
+      </button>
+    );
+  }
+}
+```
+Като извиквате this.setState от onClick функцията в метода render на Square, ние казваме на React да ре-рендерира този квадрат всеки път, когато се натисне неговия бутон. След актуализацията, this.state.value ще бъде 'X', така че ще видим X на екрана. Ако кликнете върху някой от Square компонентите, ще се покаже X.
+
+Когато извикваме setState в компонент, React автоматично актуализира дъщерните компоненти вътре в него.
+
+Виж целия код тук
+
